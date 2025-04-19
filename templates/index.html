@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Umami Peptide Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            color: #222;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Umami Peptide Predictor</h1>
+    <form method="POST">
+        <label for="sequence">Enter peptide sequence:</label>
+        <input type="text" name="sequence" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <strong>Result:</strong> {{ result }}
+        </div>
+    {% endif %}
+</body>
+</html>
